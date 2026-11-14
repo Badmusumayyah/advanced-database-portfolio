@@ -1,0 +1,7 @@
+mongo1:27017 (not reachable/healthy)
+mongo2:27017 PRIMARY
+mongo3:27017 SECONDARY
+failover_test docs: 1
+mongo1:27017 SECONDARY
+mongo2:27017 PRIMARY
+mongo3:27017 SECONDARY

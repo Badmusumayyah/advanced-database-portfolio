@@ -1,0 +1,44 @@
+ client_addr |   state   | sync_state 
+-------------+-----------+------------
+ 172.18.0.3  | streaming | async
+(1 row)
+
+ pg_is_in_recovery 
+-------------------
+ t
+(1 row)
+
+ pg_is_in_recovery 
+-------------------
+ t
+(1 row)
+
+ primary_transactions 
+----------------------
+                    0
+(1 row)
+
+ replica_transactions 
+----------------------
+                    0
+(1 row)
+
+INSERT 0 1
+ customer_id |    full_name     
+-------------+------------------
+           2 | Replication Test
+(1 row)
+
+ERROR:  cannot execute INSERT in a read-only transaction
+ERROR:  cannot execute INSERT in a read-only transaction
+ customer_id |    full_name     
+-------------+------------------
+           2 | Replication Test
+(1 row)
+
+ERROR:  cannot execute INSERT in a read-only transaction
+ replication_lag 
+-----------------
+ 00:00:16.952872
+(1 row)
+
